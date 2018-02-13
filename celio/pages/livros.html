@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Library App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- meus stilos -->
+	<link rel="stylesheet" type="text/css" href="../resources/myStyle.css">	
+	<!-- meus scripts -->
+	<script src="../resources/myScript.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="well">
+			<h1>Livros</h1>
+		</div>
+		<input type="text" style="display: none" name="idautorlivro" id="idautorlivro">
+		<button onclick="openModalLivro(0,'')" class="btn btn-primary">Novo Livro</button>
+		<button onclick="window.close()" class="btn btn-primary">Voltar</button>
+		
+		<table id="tlivros" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Ação</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<!-- Modal de Cadastro de edicao de Livro -->
+		<div id="modalLivro" class="modal">
+
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3>Livro</h3>				
+				<label>ID</label><br/> 
+				<input type="text" size="5" name="edtidlivro" id="edtidlivro" readonly="readonly" style="text-align: center; background-color: lightgrey;" /><br/>
+				<label>Titulo</label><br/>
+				<input type="text" size="40" name="edttitulolivro" id="edttitulolivro"/><br/>
+				<br/><br/>
+				<button onclick="saveLivro()">Salvar</button>				
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		$(document).ready(function(){
+			getBooks();
+		});
+
+	</script>
+</body>
+</html>

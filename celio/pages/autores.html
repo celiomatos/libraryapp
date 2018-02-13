@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Library App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- meus stilos -->
+	<link rel="stylesheet" type="text/css" href="../resources/myStyle.css">	
+	<!-- meus scripts -->
+	<script src="../resources/myScript.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="well">
+			<h1>Minha Biblioteca</h1>
+		</div>
+		<p style="color: green"><small>(pesquisar de autores para exibir todos apenas clique em Pesquisar Autor)</small></p>		
+		<label for="idautor">Id do Autor</label>		
+		<input type="number" name="idautor" id="idautor"><br/>						
+		<label>Ordernar por:</label> 
+		<input type="radio" name="order" value="i" checked="checked">ID</input>
+		<input type="radio" name="order" value="n">Nome</input>
+		<input type="radio" name="order" value="s">Sobrenome</input><br/>
+
+		<button onclick="getAuthors()" class="btn btn-primary">Pesquisar Autor</button>
+		&nbsp;
+		<button onclick="openModalAutor(0,'','')" class="btn btn-primary">Novo Autor</button>		
+
+		<table id="tautores" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Sobrenome</th>
+					<th>Livros</th>
+					<th>Ação</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<div>
+			<button id="anterior" disabled="disabled">&lsaquo; Anterior</button>
+			<span id="numeracao"></span>
+			<button id="proximo" disabled="disabled">Próximo &rsaquo;</button>
+		</div>
+		<!-- Modal de Cadastro de edicao de autor -->
+		<div id="modalAutor" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3>Autor</h3>				
+				<label>ID</label><br/> 
+				<input type="text" size="5" name="edtidauthor" id="edtidauthor" readonly="readonly" style="text-align: center; background-color: lightgrey;" /><br/>
+				<label>Primeiro Nome</label><br/>
+				<input type="text" size="30" name="edtnomeauthor" id="edtnomeauthor"/><br/>
+				<label>Ultimo Nome</label><br/>
+				<input type="text" size="30" name="edtsobrenomeauthor" id="edtsobrenomeauthor"/>
+				<br/><br/>
+				<button onclick="saveAuthor()">Salvar</button>				
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
