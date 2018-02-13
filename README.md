@@ -7,4 +7,4 @@ Estrutura do projeto
 /pages --> contem os htmls 
 /resources --> contem os css e scripts
 
-Para a execução, execute o aquivo index.html
+Para a execução, execute o aquivo index.html (que se encontra dentro da pasta celio)
